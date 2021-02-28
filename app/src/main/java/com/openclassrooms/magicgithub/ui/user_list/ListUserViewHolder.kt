@@ -8,10 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.openclassrooms.magicgithub.R
+import com.openclassrooms.magicgithub.databinding.ItemListUserBinding
 import com.openclassrooms.magicgithub.model.User
 
-// TODO Utiliser le view binding
-class ListUserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class ListUserViewHolder(itemBinding: ItemListUserBinding) : RecyclerView.ViewHolder(itemBinding.root) {
     // FOR DESIGN ---
     private val avatar: ImageView
     private val username: TextView
@@ -26,8 +26,8 @@ class ListUserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 
     init {
-        avatar = itemView.findViewById(R.id.item_list_user_avatar)
-        username = itemView.findViewById(R.id.item_list_user_username)
-        deleteButton = itemView.findViewById(R.id.item_list_user_delete_button)
+        avatar = itemBinding.itemListUserAvatar
+        username = itemBinding.itemListUserUsername
+        deleteButton = itemBinding.itemListUserDeleteButton
     }
 }
